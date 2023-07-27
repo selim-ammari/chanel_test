@@ -12,19 +12,16 @@ export const DynamicMenu = () =>{
     return(
         <ul>
             {subMenuSelected && <li onClick={()=>{
-                console.log(menuTmp[0])
-                if(menuTmp.length > 1){
-                    SetMenu(menuTmp[menuTmp.length - 1][0]);
-                    SetMenuTmp(menuTmp.pop());
-                }else{
-                    SetMenu(menuData);
-                    SetMenuTmp(menuData)
+                SetMenu(menuTmp[menuTmp.length - 1][0]);
+                SetMenuTmp(menuTmp.filter(e=>e!==menuTmp[menuTmp.length - 1]));
+                if(menuTmp.length === 1 && subMenuSelected){
+                    SetMenuTmp([])
                     SetSubMenuSelected(false);
                 }
                 }}><FaArrowLeft/></li>}
             {menu.map(m=>{
                 return <li key={`${m.label}_${Math.random()}`}>{m.label}{m?.children?.length && <span style={{float:"right"}} onClick={()=>{
-                    let newArray = menuTmp
+                    let newArray = [...menuTmp]
                     if(newArray[0] === []){
                         newArray[0] = [menu]
                     }else{
