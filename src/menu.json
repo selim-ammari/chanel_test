@@ -1,0 +1,33 @@
+[
+    {"label":"High fashion"},
+    {"label":"Fine jewelry"},
+    {"label":"Jewelry", 
+    "children":[
+        {"label": "Rings", 
+        "children":[
+            {"label": "Engagement rings","children":[
+                {"label": "Women"},
+                {"label": "Men"}
+            ]},
+            {"label": "Wedding rings"}
+        ]}
+    ]},
+    {"label": "Perfum", "children":[
+        {"label":  "Women"},
+        {"label":  "Men"}
+    ]},
+    {"label":"Mode", 
+    "children":[
+        {"label": "Summer", 
+        "children":[
+            {"label": "Top","children":[
+                {"label": "Women"},
+                {"label": "Men"}
+            ]},
+            {"label": "Pants", "children":[
+                {"label": "Women"},
+                {"label": "Men"}
+            ]}
+        ]}
+    ]}
+]
